@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidup & Mati</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Status ayah</label>
+        <div style="display: flex;">
+            <input type="radio" name="jenis" id="hidup" value="hidup" onclick="changeLabel(this)">
+            <label for="hidup">Masih hidup</label>
+        </div>
+        <div style="display: flex;">
+            <input type="radio" name="jenis" id="mati" value="mati" onclick="changeLabel(this)">
+            <label for="mati">Meninggal</label>
+        </div>
+        <div style="display: flex;">
+            <input type="radio" name="jenis" id="ilang" value="ilang" onclick="changeLabel(this)">
+            <label for="ilang">Tidak diketahui</label>
+        </div>
+
+        <div id="wrapper">
+        </div>
+    </form>
+
+    <script>
+       
+
+
+        function changeLabel(e) {
+            if (e.value == "hidup") {
+                document.getElementById('wrapper').style.display = "block";
+                document.getElementById('wrapper').innerHTML =
+                    `  
+                    <label for="pilih">Pendidikan ayah</label>
+                    <select name="pilih">
+                        <option selected disabled="1">Pilih</option>
+                        <option value="2">smk/sma</option>
+                        <option value="3">s1/d3</option>
+                        <option value="4">s2</option>
+                        <option value="5">lainnya</option>
+                    </select><br>
+                 <label for="pilih">Pekerjaan</label>
+                    <select name="pilih">
+                        <option selected disabled="1">Pilih</option>
+                        <option value="2">smk/sma</option>
+                        <option value="3">s1/d3</option>
+                        <option value="4">s2</option>
+                        <option value="5">lainnya</option>
+                    </select><br>
+                      <label for="fname">deskripsi pekerjaan ayah</label>
+  <input type="text" id="fname" name="fname"><br>
+                       <div>Gaji</div>
+    <input type="text" id="dengan-rupiah"/>
+                `;
+                 var dengan_rupiah = document.getElementById('dengan-rupiah');
+        dengan_rupiah.addEventListener('keyup', function (e) {
+            dengan_rupiah.value = formatRupiah(this.value, 'Rp. ');
+        });
+            } else if (e.value == "mati") {
+                document.getElementById('wrapper').style.display = "block";
+                document.getElementById('wrapper').innerHTML = `
+                    <label for="pilih">Pendidikan ayah</label>
+                    <select name="pilih">
+                        <option selected disabled="1">Pilih</option>
+                        <option value="2">smk/sma</option>
+                        <option value="3">s1/d3</option>
+                        <option value="4">s2</option>
+                        <option value="5">lainnya</option>
+                    </select><br>
+                 <label for="pilih">Pekerjaan</label>
+                    <select name="pilih">
+                        <option selected disabled="1">Pilih</option>
+                        <option value="2">smk/sma</option>
+                        <option value="3">s1/d3</option>
+                        <option value="4">s2</option>
+                        <option value="5">lainnya</option>
+                    </select> <br>
+                      <label for="fname">deskripsi pekerjaan ayah semasa hidup</label>
+  <input type="text" id="fname" name="fname">
+                      <div>Gaji</div>
+    <input type="text" id="dengan-rupiah"/>
+                `;
+            } else {
+                document.getElementById('wrapper').style.display = "none";
+            }
+             function formatRupiah(angka, prefix)
+    {
+        var number_string = angka.replace(/[^,\d]/g, '').toString(),
+            split    = number_string.split(','),
+            sisa     = split[0].length % 3,
+            rupiah     = split[0].substr(0, sisa),
+            ribuan     = split[0].substr(sisa).match(/\d{3}/gi);
+            
+        if (ribuan) {
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+        
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+    }
+
+        }
+
+    </script>
+</body>
+
+</html>
+
+<style>
+    body{
+        background-color: rgb(166, 54, 79);
+    }
+</style>

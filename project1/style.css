@@ -1,0 +1,90 @@
+body{
+    font-family: poopins;
+}
+
+nav {
+    display: flex;
+    color: white;
+}
+
+nav li {
+    display: inline;
+    color: rgb(10, 7, 7);
+}
+header.navbar-container .nav-list ul {
+   
+    display: flex;
+    justify-content: center;
+    gap: 2rem 2rem;
+}
+
+header.navbar-container .nav-list li {
+    list-style: none;
+}
+
+header.navbar-container .nav-list li a {
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+
+    border-radius: 999px;
+
+}
+header.navbar-container {
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    padding-block: 1rem;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: rgb(227, 104, 145);
+    transition: 0.3s;
+    width: 20%;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+
+  main {
+
+    align-items: center;
+  }
+
+  .coba{
+    padding-top: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+
+  .komen img{
+    width: 20px;
+    height: 20px;
+    
+  }
+  .komen{
+    display: flex;
+    justify-content: space-around;
+   align-items: center;
+  }
+
+  .Title {
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  .Title img {
+    padding-right: 1%;
+    
+  }
